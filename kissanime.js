@@ -95,7 +95,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 				long_url = downloadQualityOptions[0].attr('href');
 			}
 			console.log(c);
-			newLinks = newLinks + '<a href="' + long_url + '">' + fileName.replace('%n', i) + '.mp4</a><br></br>\n';
+			newLinks = newLinks + '<a href="' + long_url + '">' + fileName.replace('%n', c) + '.mp4</a><br></br>\n';
 			c++
         },
         async:   false, 
