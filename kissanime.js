@@ -55,7 +55,12 @@ console.log('Ending episode: ' + endEpisode)
 var videoQuality = prompt("Enter video quality you want to download. Leave blank for default (1280x720.mp4)"); 
 //set preferred quality (will choose the best available if not an option)
 if (videoQuality === null || videoQuality == '') {
-	videoQuality = '1280x720.mp4';
+	videoQuality = '1920x1080.mp4';
+}
+
+var fileName = prompt("Enter file name, with '%n' in place of the episode number");
+if (fileName === null || fileName == '') {
+	fileName = "Episode %n";
 }
 
 var i;
@@ -90,7 +95,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 				long_url = downloadQualityOptions[0].attr('href');
 			}
 			console.log(c);
-			newLinks = newLinks + '<a href="' + long_url + '">Episode ' + c + ' (' + videoQuality + ')</a><br></br>\n';
+			newLinks = newLinks + '<a href="' + long_url + '">' + fileName.replace('%n', i) + '.mp4</a><br></br>\n';
 			c++
         },
         async:   false, 
